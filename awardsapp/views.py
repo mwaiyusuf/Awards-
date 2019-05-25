@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect,
 
 # Create your views here.
 @login_required(login_url='/accounts/login')
-def home_projects (request):
+def home  (request):
     # Display all projects here:
 
     if request.GET.get('search_term'):
