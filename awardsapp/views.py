@@ -1,5 +1,9 @@
 from django.shortcuts import render,redirect,
-
+from __future__ import unicode_literals 
+from .models import Image,Location,tags,Profile,Review,NewsLetterRecipients,Like,Project 
+from .forms import NewImageForm, UpdatebioForm, ReviewForm, NewProjectForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 # Create your views here.
 @login_required(login_url='/accounts/login')
 def home  (request):
