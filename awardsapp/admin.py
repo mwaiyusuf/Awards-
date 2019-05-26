@@ -2,6 +2,8 @@ from django.contrib import admin
 from __future__ import unicode_literals
 from .models import Location,tags, Image, Project, Profile, Review
 
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('user',)
 class ImageAdmin(admin.ModelAdmin):
     filter_horizontal = ('tags',)
 
