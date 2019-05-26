@@ -24,4 +24,7 @@ class ReviewForm(forms.ModelForm):
         widgets = {
             'comment': Textarea(attrs={'cols': 40, 'rows': 15}),
         }
-
+        
+class NewsLetterForm(forms.Form):
+    your_name = forms.CharField(label='First Name',max_length=30)
+    email = forms.EmailField(label='Email')
