@@ -11,6 +11,12 @@ class NewProjectForm(forms.ModelForm):
     class Meta:
         model = Project
         exclude = ['user',]
+
+class UpdatebioForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        exclude = ['user',]
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
@@ -18,3 +24,4 @@ class ReviewForm(forms.ModelForm):
         widgets = {
             'comment': Textarea(attrs={'cols': 40, 'rows': 15}),
         }
+
