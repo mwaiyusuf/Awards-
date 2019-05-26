@@ -150,3 +150,51 @@ import numnpy as np
 
     def __str__(self):
         return self.name
+  class Review(models.Model):
+    RATING_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+        (6, '6'),
+        (7, '7'),
+        (8, '8'),
+        (9, '9'),
+        (10, '10'),
+
+    )
+    project = models.ForeignKey(Project, null=True, blank=True, on_delete=models.CASCADE, related_name="reviews")
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE, related_name='reviews')
+    image = models.ForeignKey(Image, on_delete=models.CASCADE, related_name="reviews", null=True, blank=True)
+    comment = models.TextField()
+    design_rating = models.IntegerField(choices=RATING_CHOICES, default=0)
+    usability_rating = models.IntegerField(choices=RATING_CHOICES, default=0)
+    content_rating = models.IntegerField(choices=RATING_CHOICES, default=0)
+
+    def save_comment(self):
+        self.save()
+
+    def get_comment(self, id):
+        comments = Review.objects.filter(image_id =id)
+        return comments
+
+    def __str__(self):
+        return self.comment
+   class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
+
+class Like(models.Model):
+    user = models.ForeignKey(User)
+    image = models.ForeignKey(Image)
+    value = models.IntegerField(default=True, null=True, blank=True)
+
+    def save_like(self):
+        self.save()
+
+    def __str__(self):
+        return str(self.user) + ':' + str(self.image) + ':' + str(self.value)
+
+    class Meta:
+        unique_together = ("user", "image", "value")
