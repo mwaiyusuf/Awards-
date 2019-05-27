@@ -1,11 +1,14 @@
-{% extends 'base.html' %} {% load static %} {% load bootstrap4%} {% block content %}
-<link href="https://fonts.googleapis.com/css?family=Charmonman|Dancing+Script|Kodchasan|Spirax|Abril+Fatface" rel="stylesheet">
+{% extends 'base.html' %} 
+{% load static %} 
+{% load bootstrap4%} 
+{% block content %}
+ 
 
 <div class="container">
 
   <div class="jumbotron text-center" style="background-color:white;">
 
-    <h1 class="h1" style="font-family: 'Dosis', cursive; color:blue;font-size:70px;">Awards</h1>
+    <h1 class="h1" style="  color:blue;font-size:70px;">Awards</h1>
 
 
   </div>
@@ -18,17 +21,17 @@
 
 
 
-    <h5 class="card-title" style="font-family: 'Dosis', sans-serif;"><strong>Project Name:</strong>
+    <h5 class="card-title" style=" "><strong>Project Name:</strong>
       <br>
       {{project.title}}</h5>
-    <p class="card-text" style="font-family: 'Dosis', sans-serif;"><strong>Description Of Project:</strong>
+    <p class="card-text" style=" "><strong>Description Of Project:</strong>
       <br>
       {{project.description}}</p>
   </div>
 
   <div class="card border-secondary">
      <div class="card-header">
-     <h5 style="font-family: 'Dosis', sans-serif;"> Comments</h5>
+     <h5 style=" "> Comments</h5>
        </div>
 
 
@@ -39,22 +42,22 @@
     {% for review in latest_review_list %}
     <div>
 
-        <p style="color:black; font-family: 'Dosis',sans-serif;">Comment by {{ review.user }}: {{ review.comment }}</p>
+        <p style="color:black; ">Comment by {{ review.user }}: {{ review.comment }}</p>
     </div>
 
 
     {% endfor %}
 
-          <h1 style="color:black;font-family: 'Dosis', sans-serif;">AVERAGE OF REVIEWS</h1>
+          <h1 style="color:black; ">AVERAGE OF REVIEWS</h1>
 
 
-<h5 style="font-family: 'Dosis',sans-serif;">{{ project.reviews.count }} reviews ({{ project.average_design | floatformat }} average rating of design)</h5>
-<h5 style="font-family: 'Dosis',sans-serif;">{{ project.reviews.count }} reviews ({{ project.average_content | floatformat }} average rating of content)</h5>
-<h5 style="font-family: 'Dosis',sans-serif;">{{ project.reviews.count }} reviews ({{ project.average_usability | floatformat }} average rating of usability)</h5>
+<h5 style=" ">{{ project.reviews.count }} reviews ({{ project.average_design | floatformat }} average rating of design)</h5>
+<h5 style=" ">{{ project.reviews.count }} reviews ({{ project.average_content | floatformat }} average rating of content)</h5>
+<h5 style=" ">{{ project.reviews.count }} reviews ({{ project.average_usability | floatformat }} average rating of usability)</h5>
 
-<h3 style="font-family: 'Dosis', sans-serif;">Add your comment</h3>
+<h3 style=" ">Add your comment</h3>
   <hr>
-  <form action=""  method="post" style="font-family: 'Dosis',sans-serif;">
+  <form action=""  method="post" style=" ">
     {%csrf_token%} {% bootstrap_form form %}
       <input type="submit" class="btn btn-primary" value="Post">
   </form>
@@ -70,29 +73,4 @@
 </div>
 </div>
 
-
-<div class="container">
-    <div class="col-md-12">
-      <div class="footer text-center">
-        <ul id="footer1">
-          <li>ABOUT US</li>
-          <li>SUPPORT</li>
-          <li>PRESS</li>
-          <li>API</li>
-          <li>JOBS</li>
-          <li>PRIVACY</li>
-          <li>TERMS</li>
-          <li>DIRECTORY</li>
-          <li>PROFILES</li>
-          <li>HASHTAGS</li>
-          <li>LANGUAGE</li>
-          <br>
-
-          
-        </ul>
-
-      </div>
-
-    </div>
-  </div>
 {% endblock %}
