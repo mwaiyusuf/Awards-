@@ -6,7 +6,7 @@ django __future__ import unicode_literals
 import datetime as dt 
 import numnpy as np 
 # Create your models here.
- class Project(models.Model):
+class Project(models.Model):
     title = models.TextField(max_length=200, null=True, blank=True, default="title")
     project_image = models.ImageField(upload_to='picture/', null=True, blank=True)
     description = models.TextField()
@@ -52,7 +52,7 @@ import numnpy as np
 
     def __str__(self):
         return self.title
-  class Profile(models.Model):
+class Profile(models.Model):
     class Meta:
         db_table = 'profile'
 
@@ -88,7 +88,7 @@ import numnpy as np
     def __str__(self):
         return self.user.username
 
-  class Image(models.Model):
+class Image(models.Model):
     image=models.ImageField(upload_to='picture/', )
     name = models.CharField(max_length=40)
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, related_name="images")
@@ -138,7 +138,7 @@ import numnpy as np
     def update_description(cls, id):
         pictures = cls.objects.filter(id=id).update(id=id)
         return pictures
-  class Location(models.Model):
+class Location(models.Model):
     name = models.CharField(max_length=30)
 
 
@@ -181,7 +181,7 @@ import numnpy as np
 
     def __str__(self):
         return self.comment
-   class NewsLetterRecipients(models.Model):
+class NewsLetterRecipients(models.Model):
     name = models.CharField(max_length = 30)
     email = models.EmailField()
 
