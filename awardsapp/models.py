@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.db.models import Avg,Max,Min 
 django __future__ import unicode_literals 
 import datetime as dt 
-import numnpy as np 
+import numpy as np 
 # Create your models here.
 class Project(models.Model):
     title = models.TextField(max_length=200, null=True, blank=True, default="title")
