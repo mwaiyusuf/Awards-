@@ -14,7 +14,7 @@
 
 {% block styles %} 
 {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/news.css' %}"> 
+  <link rel="stylesheet" href="{% static 'styles/styles.css' %}"> 
   {% endblock %}
 
 </head>
@@ -29,7 +29,7 @@
     {%csrf_token%}
 
     {% bootstrap_form form%}
-    <input id="id_myfield" type="submit" class="btn btn-success btn-lg" value="Post">
+    <input   type="submit" class="btn btn-success btn-lg" value="Post">
   </form>
 
    {% block scripts %}

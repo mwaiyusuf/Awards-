@@ -3,10 +3,10 @@
 <nav class="navbar bg-light ">
   <div class="container-fluid">
     <div class="navbar-header">
-        <a class="navbar-brand" href="{% url 'homePage' %}"><img src="https://png.icons8.com/linen/50/000000/rating.png" style="height:40px;width:36px;">
+        <a class="navbar-brand" href="{% url 'homePage' %}"><img src="awardsappcup.jpg" style="height:38px;width:34px;">
       </a>
 
-      <a class="navbar-brand" id="victor" href="{% url 'homePage' %}">AWARDS
+      <a class="navbar-brand"   href="{% url 'homePage' %}">AWARDS
       </a>
     </div>
     <div>
@@ -14,30 +14,30 @@
     <div class="col-sm-6 col-md-6">
       {% if user.is_authenticated %}
 
-      <li style=" ">
+      <li style="font-family: 'Ranga', cursive; ">
         <a href="{%url 'edit_profile'%}">Edit Profile</a>
       </li>
 
-      <li style=" ">
+      <li style="font-family: 'Ranga', cursive; ">
         <a href="{% url 'individual_profile_page' user.id %}">My Profile</a>
       </li>
-                   <li style=" ">
+                   <li style=" font-family: 'Ranga', cursive;">
                     <a href="{%url 'new_project'%}">Submit Your Project</a>
                   </li>
-      <li style=" ">
+      <li style=" font-family: 'Ranga', cursive;">
         <a href="/accounts/password/change">Change Password</a>
       </li>
 
-      <li style=" ">
+      <li style="font-family: 'Ranga', cursive; ">
         <a href="/logout">Logout</a>
       </li>
 
       {% else %}
-      <li style=" ">
+      <li style=" font-family: 'Ranga', cursive;">
         <a class='btn btn-default' href="/accounts/login">Login</a>
       </li>
 
-      <li style=" ">
+      <li style=" font-family: 'Ranga', cursive;">
         <a class='btn btn-default' href="/accounts/register">Register</a>
       </li>
 
@@ -50,9 +50,9 @@
       <form class="navbar-form" role="search" action="{% url 'search_projects' %}">
 
         <div class="input-group">
-          <input type="text" style=" " class="form-control mr-sm-4" placeholder="Search Project" name="project">
+          <input type="text" style="font-family: 'Ranga', cursive; " class="form-control mr-sm-4" placeholder="Search Project" name="project">
           <div class="input-group-btn">
-            <button class="btn btn-outline-primary my-2 my-sm-0" style=" " type="submit">Find</button>
+            <button class="btn btn-outline-primary my-2 my-sm-0" style=" font-family: 'Ranga', cursive;" type="submit">Find</button>
           </div>
         </div>
 

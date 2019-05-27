@@ -15,23 +15,23 @@
 </div>
 
 <div class="container">
-<div class="card mb-3" style="width:40rem;;">
+<div class="card mb-2" style="width:37rem;;">
   <img class="card-img-top" src="{{project.project_image.url}}" alt="Card image cap" class="img-fluid" size="100px200">
   <div class="card-body">
 
 
 
-    <h5 class="card-title" style=" "><strong>Project Name:</strong>
+    <h5 class="card-title" style=" font-family: 'Ranga', cursive;"><strong>Project Title:</strong>
       <br>
       {{project.title}}</h5>
-    <p class="card-text" style=" "><strong>Description Of Project:</strong>
+    <p class="card-text" style="font-family: 'Ranga', cursive; "><strong>Project description:</strong>
       <br>
       {{project.description}}</p>
   </div>
 
   <div class="card border-secondary">
      <div class="card-header">
-     <h5 style=" "> Comments</h5>
+     <h5 style="font-family: 'Ranga', cursive; "> Comments</h5>
        </div>
 
 
@@ -42,32 +42,30 @@
     {% for review in latest_review_list %}
     <div>
 
-        <p style="color:black; ">Comment by {{ review.user }}: {{ review.comment }}</p>
+        <p style="color: #212121; ">Comment by {{ review.user }}: {{ review.comment }}</p>
     </div>
 
 
     {% endfor %}
 
-          <h1 style="color:black; ">AVERAGE OF REVIEWS</h1>
+          <h1 style="color: #212121; ">AVERAGE OF REVIEWS</h1>
 
 
 <h5 style=" ">{{ project.reviews.count }} reviews ({{ project.average_design | floatformat }} average rating of design)</h5>
 <h5 style=" ">{{ project.reviews.count }} reviews ({{ project.average_content | floatformat }} average rating of content)</h5>
 <h5 style=" ">{{ project.reviews.count }} reviews ({{ project.average_usability | floatformat }} average rating of usability)</h5>
 
-<h3 style=" ">Add your comment</h3>
+<h3 style="font-family: 'Ranga', cursive; ">Add your comment</h3>
   <hr>
-  <form action=""  method="post" style=" ">
-    {%csrf_token%} {% bootstrap_form form %}
+  <form action="{%url 'homePage'%"  method="post" style=" font-family: 'Ranga', cursive;">
+    {%csrf_token%} 
+    {% bootstrap_form form %}
       <input type="submit" class="btn btn-primary" value="Post">
   </form>
   <hr>
 
 </div>
-
-
-
-
+ 
      </div>
    </div>
 </div>

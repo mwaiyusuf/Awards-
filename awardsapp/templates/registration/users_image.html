@@ -5,14 +5,14 @@
 {% block content %}
 
 <div class="jumbotron text-center" style="background-color:white;">
-    <h1 style=" "> Your Profile Page </h1>
+    <h1 style="font-family: 'Ranga', cursive; "> Your Profile Page </h1>
 
     {% if profile.profile_pic %}
-     <img src="{{user.profile.profile_pic.url | default_if_none:'#'}}" class="img-thumbnail" id="eachimage1" style="height:200px;width:150px;"></a>
+     <img src="{{user.profile.profile_pic.url | default_if_none:'#'}}" class="img-thumbnail"  style="height:197px;width:147px;"></a>
    {% endif %}
     <p style=" ">{{user.profile.bio}}</p>
     <p style=" ">{{user.profile.contact}}</p>
-    <button class="btn btn-lg btn-success" style=" "><a href=" {%url 'edit_profile'%}">Edit Profile</a></button>
+    <button class="btn btn-lg btn-success" style=" font-family: 'Ranga', cursive;"><a href=" {%url 'edit_profile'%}">Edit Profile</a></button>
     </div>
 
 <div class="container">
@@ -20,9 +20,9 @@
     {% for project in projects %}
 
     <div class="card border-secondary"><a href="{% url 'image' image.id %}">
-        <img src="{{project.project_image.url }}" class="img-fluid" id="eachimage"
+        <img src="{{project.project_image.url }}" class="img-fluid"  
           size="100px200"></a>
- <p style=" "> Caption : {{ project.description}}</p>
+ <p style=" font-family: 'Ranga', cursive;"> Caption : {{ project.description}}</p>
       <p style=" ">Posted by : {{ project.user}}</p>
     </div>
     {% endfor %}

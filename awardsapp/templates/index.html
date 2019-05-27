@@ -6,10 +6,10 @@
 
 <div class="container">
 
-  <div class="jumbotron text-center mb-0" id="jumbo" style="background-color:white;">
+  <div class="jumbotron text-center mb-0" id="jumbo" style="background-color: #e0e0e0;">
 
-    <h1 class="h1" style="  color:blue;font-size:70px;">Awards</h1>
-    <p class="h1" style="  color:black;font-size:25px;">View projects, submit your own projects and have them reviewed.</p>
+    <h1 class="h1" style="  color: #2196f3;font-size:70px; font-family: 'Ranga', cursive;">Awards</h1>
+    <p class="h1" style="  color: #212121;font-size:25px; font-family: 'Ranga', cursive;">View projects, submit your  projects and  get reviewed.</p>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
 
   <div class="card-deck flex-wrap">
     {% for project in projects %}
-    <div class="card border-secondary w-33"><a href="{% url 'project' project.id %}">
+    <div class="card border-secondary w-31"><a href="{% url 'project' project.id %}">
 
         <img src="{{project.project_image.url}}" data-target="#imageModal{{project.id}}" data-toggle="modal" alt="" class="img-fluid"
           id="eachimage1" size="100px200"></a>
@@ -36,11 +36,12 @@
 
 </div>
 
-<div class="jumbotron text-center mt-3" style="background-color:white; ">
+<div class="jumbotron text-center mt-2" style="background-color:white; ">
 
   <form action="{%url 'homePage'%}" method="post">
-    {%csrf_token%} {% bootstrap_form letterForm %}
-    <input type="submit" style="background-color:white;" value="Subscribe To Awards ">
+    {%csrf_token%} 
+    {% bootstrap_form letterForm %}
+    <input type="submit" style="background-color: #fafafa;" value="Subscribe To Awards ">
   </form>
 
 </div>
@@ -48,8 +49,9 @@
 
  
 
-{% endblock %} {% block scripts %} 
+{% endblock %} 
+{% block scripts %} 
 {{block.super}}
-<script type="text/javascript" src="{%static 'js/scripts.js'%}"></script>
+<script type="text/javascript" src="{%static 'js/script.js'%}"></script>
 
 {% endblock %}

@@ -77,11 +77,8 @@ class ImageTestClass(TestCase):
         self.funny= tags.objects.create(name='funny')
 
 
-        self.test_image = Image.objects.create(image='imagesef',
-                                name='cat',
-                                description='This is a description',
-                                location=self.nairobi,
-                                )
+        self.test_image = Image.objects.create(image='imagesef',name='cat', description='This is a description',
+location=self.nairobi, )
 
         self.test_image.save()
 
@@ -109,13 +106,11 @@ class Review(TestCase):
     def setUp(self):
 
         self.mwai = User.objects.create(username="mwai")
-        self.picture = Image.objects.create(image='image1',
+        self.picture = Image.objects.create(image='image',
                                             user=self.mwai)
-        self.comment = Review.objects.create(comment = 'nicephoto')
+        self.comment = Review.objects.create(comment = 'nicepic')
 
-        self.test_review = Review.objects.create(user=self.mwai,
-                                                 image=self.picture,
-                                                 comment='nice photo')
+        self.test_review = Review.objects.create(user=self.mwai,image=self.picture,comment='nicepic')
         self.test_review.save()
 
     #Testing instance

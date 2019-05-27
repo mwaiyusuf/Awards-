@@ -3,27 +3,26 @@
 {% load static %} 
 {% block content %}
 
-<div class="container" style="background-color:#fff;
- background-image:('../../static/photos/')">
+<div class="container" style="background-color: white;">
   <div class="row">
 
     <div class="col-md-6 mt-5">
-      <img class="thumbnail" src="{% static 'photos/' %}" style="height:450px;width:600px;">
+      <img class="thumbnail" src="{% static 'images/' %}" style="height:448px;width:597px;">
 
-      <div class="card mt-5" style="width: 28rem;">
+      <div class="card mt-5" style="width: 27rem;">
         <div class="card-body text-center">
-          <h5 class="card-title" style="">Have an account already?</h5>
-          <h2 style="color:grey;font-size:10px; "> sign up.</h2>
-          <a href="/accounts/login" class="btn btn-primary" style="">Login</a>
+          <h5 class="card-title" style="font-family: 'Ranga', cursive;">Have an account already?</h5>
+          <h2 style="color:grey;font-size:10px; font-family: 'Ranga', cursive; "> sign up.</h2>
+          <a href="/accounts/login" class="btn btn-primary" style="font-family: 'Ranga', cursive;">Login</a>
         </div>
       </div>
 
       <div class="card mt-5" style="width: 28rem;">
         <div class="card-body text-center">
-          <h5 class="card-title" style="">Get the app.</h5>
-          <a href="https://itunes.apple.com/ke/app/instagram/id389801252?mt=8"><img src="{% static 'photos/' %}"
-              style="height:90px;width:200px;"></a>
-          <a href="https://play.google.com/store?hl=en"><img src="{% static 'photos/' %}" style="height:90px;width:200px;"></a>
+          <h5 class="card-title" style="font-family: 'Ranga', cursive;">Get the app.</h5>
+          <a href="https://play.google.com/store/apps/details?id=com.instagram.android&hl=en"><img src="{% static 'images/geteapp.jpg' %}"
+              style="height:87px;width:198px;"></a>
+          <a href="https://itunes.apple.com/ke/app/instagram/id389801252?mt=8"><img src="{% static 'images/getappIphone' %}" style="height:87px;width:198px;"></a>
         </div>
       </div>
 
@@ -33,16 +32,17 @@
       {% if form.errors %}
       <p> Some Information Might be Incorrect </p>
       {% endif %}
-      <div class="card border-primary mb-4" style="max-width:25rem;">
+      <div class="card border-primary mb-4" style="max-width:23rem;">
 
         <div class="card-header text-center">
-          <h1 class="h1" style="  color:blue;font-size:65px;">Awards</h1>
-          <h3 class="text-center" style="color:grey;font-size:15px;">Sign up to review and rate website projects</h3>
+          <h1 class="h1" style="  color: #2196f3;font-size:67px;">Awards</h1>
+          <h3 class="text-center" style="color:#e0e0e0;font-size:17px;">Sign up to review and rate projects</h3>
         </div>
         <div class="card-body text-primary">
 
-          <form action="/accounts/register/" method="post" style="">
-            {% csrf_token %} {% bootstrap_form form %}
+          <form action="/accounts/register/" method="post" style="font-family: 'Ranga', cursive;">
+            {% csrf_token %} 
+            {% bootstrap_form form %}
             <div class="form-group">
               <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
             </div>
@@ -59,10 +59,6 @@
 
   </div>
   <br>
-  <br>
-  <!-- empty div -->
-
-
    
 </div>
 {% endblock %}
