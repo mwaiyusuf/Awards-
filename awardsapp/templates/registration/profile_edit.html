@@ -1,4 +1,8 @@
-{%extends "registration/base.html"%} {% load bootstrap4 %} {%load static%} {% load staticfiles %} {% block content %}
+{%extends "registration/base.html"%} 
+{% load bootstrap4 %} 
+{%load static%} 
+{% load staticfiles %} 
+{% block content %}
 
 
 <head>
@@ -8,8 +12,10 @@
   <title>Edit Your Profile Information</title>
   {{form.media}}
 
-{% block styles %} {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %}
+{% block styles %} 
+{% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/news.css' %}"> 
+  {% endblock %}
 
 </head>
 
@@ -29,14 +35,13 @@
    {% block scripts %}
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  {% bootstrap_javascript %} {% endblock %}
+  {% bootstrap_javascript %} 
+  {% endblock %}
 
 
      </div>
 </div>
 
-
-
-
+ 
 </body>
 {% endblock %}

@@ -13,7 +13,8 @@
 
 {% block styles %}
     {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}"> {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+  {% endblock %}
 
 </head>
 
@@ -23,7 +24,7 @@
      <div class="row">
 
 
-  <form  action="{%url 'new_project'%}" method="post" style="font-family: 'Dosis', sans-serif;" enctype="multipart/form-data">
+  <form  action="{%url 'new_project'%}" method="post" style=" " enctype="multipart/form-data">
     {%csrf_token%}
 
     {% bootstrap_form form%}
