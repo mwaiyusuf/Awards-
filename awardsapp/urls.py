@@ -6,9 +6,9 @@ from django.conf import settings
 
 urlpatterns=[
     url('^$',views.home,name = 'home'),
-    url(r'^$', views.projects, name='homePage'),
+    url(r'^$', views.project, name='homePage'),
     # url(r'^search/', views.search_users, name='search_users'),
-    url(r'^search/', views.search_projects, name='search_projects'),
+    url(r'^search/', views.search_project, name='search_project'),
     url(r'^image(\d+)', views.project, name='project'),
     url(r'^users/', views.user_list, name='user_list'),
     url(r'^new/image$', views.new_image, name='new_image'),

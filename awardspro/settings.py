@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'awardspro.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '',
-        'USER' : '',
-        'Password' : '',
+        'NAME': 'awards',
+        'USER' : 'moringa',
+        'Password' : '0732442483a',
     }
 }
 

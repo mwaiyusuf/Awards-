@@ -1,7 +1,7 @@
+from __future__ import unicode_literals 
 from django.shortcuts import render,redirect,get_object_or_404
 from django.http  import HttpResponse, Http404, HttpResponseRedirect, JsonResponse
-from __future__ import unicode_literals 
-from .models import Image,Location,tags,Profile,Review,NewsLetterRecipients,Like,Project 
+from .models import Image,Review,NewsLetterRecipients,Like,Project 
 from .forms import NewImageForm, UpdatebioForm, ReviewForm, NewProjectForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -27,7 +27,7 @@ def home  (request):
             recipient.save()
             send_welcome_email(name, email)
 
-            HttpResponseRedirect('home_projects')
+            HttpResponseRedirect('home')
 
     return render(request, 'index.html', {'projects':projects, 'letterForm':form})
 def project(request, id):
