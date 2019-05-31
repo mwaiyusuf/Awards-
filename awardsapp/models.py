@@ -37,9 +37,9 @@ class Project(models.Model):
         return projects
 
     @classmethod
-    def search_projects(cls, search_term):
-        projects = cls.objects.filter(title__icontains=search_term)
-        return projects
+    def search_project(cls, search_term):
+        project = cls.objects.filter(title__icontains=search_term)
+        return project
 
     @classmethod
     def update_project(cls, id):
@@ -169,6 +169,7 @@ class Review(models.Model):
 class NewsLetterRecipients(models.Model):
     name = models.CharField(max_length = 30)
     email = models.EmailField()
+    
 
 class Like(models.Model):
     user = models.ForeignKey(User)
@@ -184,18 +185,4 @@ class Like(models.Model):
     class Meta:
         unique_together = ("user", "image", "value")
 
-# class tags(models.Model):
-#     name = models.CharField(max_length=30)
-
-#     def __str__(self):
-#         return self.name
-
-#     def save_tags(self):
-#         self.save()
-
-#     def delete_tags(self):
-#         self.delete()
-
-
  
-

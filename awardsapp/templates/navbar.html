@@ -1,67 +1,38 @@
 {% load static %}
- 
-<nav class="navbar bg-light ">
-  <div class="container-fluid">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{% url 'homePage' %}"><img src="awardsappcup.jpg" style="height:38px;width:34px;">
-      </a>
-
-      <a class="navbar-brand"   href="{% url 'homePage' %}">AWARDS
-      </a>
-    </div>
-    <div>
+{% load bootstrap4 %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">AWARDS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+{% if user.is_authenticated %}
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item active">
+        <a class="nav-link" href="#"> Home <span class="sr-only">(current)</span></a>
+      </li> -->
+      <li class="nav-item" style="font-family: 'Ranga', cursive; ">
+        <a class="nav-link" href="{%url 'new_project'%}">Submit Your Project</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Profile
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'individual_profile_page' user.id %}">My Profile</a>
+          <a class="dropdown-item" href="{%url 'edit_profile'%}">Edit Profile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/accounts/password/change">Change Password</a>
         </div>
-    <div class="col-sm-6 col-md-6">
-      {% if user.is_authenticated %}
-
-      <li style="font-family: 'Ranga', cursive; ">
-        <a href="{%url 'edit_profile'%}">Edit Profile</a>
       </li>
-
-      <li style="font-family: 'Ranga', cursive; ">
-        <a href="{% url 'individual_profile_page' user.id %}">My Profile</a>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/logout" tabindex="-1" aria-disabled="true">Logout</a>
       </li>
-                   <li style=" font-family: 'Ranga', cursive;">
-                    <a href="{%url 'new_project'%}">Submit Your Project</a>
-                  </li>
-      <li style=" font-family: 'Ranga', cursive;">
-        <a href="/accounts/password/change">Change Password</a>
-      </li>
-
-      <li style="font-family: 'Ranga', cursive; ">
-        <a href="/logout">Logout</a>
-      </li>
-
-      {% else %}
-      <li style=" font-family: 'Ranga', cursive;">
-        <a class='btn btn-default' href="/accounts/login">Login</a>
-      </li>
-
-      <li style=" font-family: 'Ranga', cursive;">
-        <a class='btn btn-default' href="/accounts/register">Register</a>
-      </li>
-
-{% endif %}
-    </div>
-
-     
-    <div class="col-sm-4 col-md-4 navbar-right">
-
-      <form class="navbar-form" role="search" action="{% url 'search_projects' %}">
-
-        <div class="input-group">
-          <input type="text" style="font-family: 'Ranga', cursive; " class="form-control mr-sm-4" placeholder="Search Project" name="project">
-          <div class="input-group-btn">
-            <button class="btn btn-outline-primary my-2 my-sm-0" style=" font-family: 'Ranga', cursive;" type="submit">Find</button>
-          </div>
-        </div>
-
-
-      </form>
-
-    </div>
-     
-
-
+    </ul>
+    {% endif %}
+    <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_projects' %}">
+      <input class="form-control mr-sm-2" style="font-family: 'Ranga', cursive; " type="search" placeholder="Search" aria-label="Search" name="project">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="font-family: 'Ranga', cursive;">Search</button>
+    </form>
   </div>
 </nav>
