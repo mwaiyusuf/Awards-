@@ -15,7 +15,7 @@ distro-info===0.18ubuntu0.18.04.1
 Django==1.11
 django-bootstrap3==11.0.0
 django-bootstrap4==0.0.8
-django-registration==2.4.1
+django-registration==3.1.2
 django-tinymce==2.8.0
 djangorestframework==3.9.4
 dominate==2.3.5
